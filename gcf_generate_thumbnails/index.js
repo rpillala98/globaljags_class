@@ -10,8 +10,8 @@ exports.generateThumbnail = async (file, context) => {
   const gcsFile = file;
   const storage = new Storage();
   const sourceBucket = storage.bucket(gcsFile.bucket);
-  const thumbnailsBucket = storage.bucket('sp24-41200-elliott-gj-thumbnails');
-  const finalBucket = storage.bucket('sp24-41200-elliott-gj-final');
+  const thumbnailsBucket = storage.bucket('sp24-50100-rpillala-gj-thumbnails');
+  const finalBucket = storage.bucket('sp24-50100-rpillala-gj-final');
 
   // HINT HINT HINT
   const version = process.env.K_REVISION;
@@ -26,7 +26,7 @@ exports.generateThumbnail = async (file, context) => {
   let validFile = false;
 
   if (gcsFile.contentType === 'image/jpeg') {
-    console.log('This is a JPG file.');
+    console.log('This is a JPEG file.');
     fileExtension = 'jpg';
     validFile = true;
   } else if (gcsFile.contentType === 'image/png') {
